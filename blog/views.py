@@ -13,7 +13,7 @@ def blogHome(request):
 
 def blogPost(request, slug): 
     post=Post.objects.filter(slug=slug).first()
-    post.views= post.views +1
+    post.views= post.views + 1
     post.save()
 
     comments = BlogComment.objects.filter(post=post, parent=None)
